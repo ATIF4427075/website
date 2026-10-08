@@ -427,6 +427,31 @@
       });
     },
 
+    openMobileMenu: function () {
+      const drawer = document.getElementById('mobileNavDrawer');
+      const overlay = document.getElementById('mobileNavOverlay');
+      drawer?.classList.add('active');
+      overlay?.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    },
+
+    closeMobileMenu: function () {
+      const drawer = document.getElementById('mobileNavDrawer');
+      const overlay = document.getElementById('mobileNavOverlay');
+      drawer?.classList.remove('active');
+      overlay?.classList.remove('active');
+      document.body.style.overflow = '';
+    },
+
+    toggleMobileMenu: function () {
+      const drawer = document.getElementById('mobileNavDrawer');
+      if (drawer?.classList.contains('active')) {
+        this.closeMobileMenu();
+      } else {
+        this.openMobileMenu();
+      }
+    },
+
     handleVIPSubscribe: function (event) {
       event.preventDefault();
       const form = event.target;

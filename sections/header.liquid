@@ -1,5 +1,5 @@
 {%- comment -%}
-  Site Header & Navigation Section (PKR Rs.)
+  Site Header & Navigation Section (PKR Rs.) - Fully Responsive (PC & Mobile)
 {%- endcomment -%}
 
 <header class="site-header" id="siteHeader">
@@ -12,7 +12,7 @@
         <span class="grade-badge">Clinical Grade</span>
       </a>
 
-      <!-- Desktop Navigation -->
+      <!-- Desktop Navigation (PC) -->
       <nav class="header-nav" aria-label="Main Navigation">
         <a href="#hero-serum" class="active">EGF/NAD+ Line</a>
         <a href="#product-top-buy">Shop Serum</a>
@@ -25,15 +25,11 @@
 
       <!-- Header Actions -->
       <div class="header-actions">
-        <button type="button" class="action-btn" title="Search Formulations" aria-label="Search">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        </button>
-
         <button type="button" class="action-btn" onclick="window.MedicubeAdmin.openPanel()" title="Store Settings & Admin Control" aria-label="Settings" style="border-color: rgba(255, 80, 105, 0.4); color: #ff526c;">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
         </button>
 
-        <button type="button" class="action-btn" onclick="window.MedicubeTheme.toggleWishlist(this, 'EGF NAD+ Firming Serum')" title="View Wishlist" aria-label="Wishlist">
+        <button type="button" class="action-btn" onclick="window.MedicubeTheme.toggleWishlist(this, 'serum-001')" title="View Wishlist" aria-label="Wishlist">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
         </button>
 
@@ -42,9 +38,42 @@
           <span class="cart-count-badge">1</span>
         </button>
 
-        <button type="button" class="action-btn mobile-menu-trigger" aria-label="Open Menu">
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" class="action-btn mobile-menu-trigger" onclick="window.MedicubeTheme.toggleMobileMenu()" aria-label="Open Mobile Menu" title="Menu">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="window.MedicubeTheme.closeMobileMenu()"></div>
+  <div class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div class="mobile-nav-header">
+      <div class="header-logo" style="font-size: 1.25rem;">
+        medicube
+        <span class="brand-cross">+</span>
+        <span class="grade-badge">Menu</span>
+      </div>
+      <button type="button" class="action-btn" onclick="window.MedicubeTheme.closeMobileMenu()" aria-label="Close Mobile Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="#hero-serum" onclick="window.MedicubeTheme.closeMobileMenu()">✨ EGF/NAD+ Breakthrough Line</a>
+      <a href="#product-top-buy" onclick="window.MedicubeTheme.closeMobileMenu()">🛍️ Buy Serum (Rs. 15,900)</a>
+      <a href="#curated-products" onclick="window.MedicubeTheme.closeMobileMenu()">🌟 Curated Best Sellers Grid</a>
+      <a href="#ingredient-breakdown" onclick="window.MedicubeTheme.closeMobileMenu()">🔬 Bio-Mechanism & Ingredients</a>
+      <a href="#clinical-results" onclick="window.MedicubeTheme.closeMobileMenu()">📊 2-Week Ultrasound Studies</a>
+      <a href="#doctor-endorsement" onclick="window.MedicubeTheme.closeMobileMenu()">🩺 Dr. Ji-Woo Song Advisory</a>
+      <a href="#vip-club" onclick="window.MedicubeTheme.closeMobileMenu()">👑 VIP Club (15% Off Code)</a>
+    </nav>
+    <div class="mobile-nav-footer">
+      <button type="button" class="btn-primary" style="width: 100%; justify-content: center;" onclick="window.MedicubeAdmin.openPanel(); window.MedicubeTheme.closeMobileMenu();">
+        <span>⚙️ Open Store Admin Panel</span>
+      </button>
+      <div style="text-align: center; margin-top: 14px; font-size: 0.75rem; color: var(--color-text-muted);">
+        Medicube Clinical Derma Lab • Pakistan
       </div>
     </div>
   </div>

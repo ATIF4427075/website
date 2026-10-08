@@ -98,6 +98,42 @@
             <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>
             <span class="cart-count-badge">1</span>
           </button>
+
+          <button type="button" class="action-btn mobile-menu-trigger" onclick="window.MedicubeTheme.toggleMobileMenu()" aria-label="Open Mobile Menu" title="Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="window.MedicubeTheme.closeMobileMenu()"></div>
+    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+      <div class="mobile-nav-header">
+        <div class="header-logo" style="font-size: 1.25rem;">
+          medicube
+          <span class="brand-cross">+</span>
+          <span class="grade-badge">Menu</span>
+        </div>
+        <button type="button" class="action-btn" onclick="window.MedicubeTheme.closeMobileMenu()" aria-label="Close Mobile Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <nav class="mobile-nav-links">
+        <a href="#hero-serum" onclick="window.MedicubeTheme.closeMobileMenu()">✨ EGF/NAD+ Breakthrough Line</a>
+        <a href="#product-top-buy" onclick="window.MedicubeTheme.closeMobileMenu()">🛍️ Buy Serum (Rs. 15,900)</a>
+        <a href="#curated-products" onclick="window.MedicubeTheme.closeMobileMenu()">🌟 Curated Best Sellers Grid</a>
+        <a href="#ingredient-breakdown" onclick="window.MedicubeTheme.closeMobileMenu()">🔬 Bio-Mechanism & Ingredients</a>
+        <a href="#clinical-results" onclick="window.MedicubeTheme.closeMobileMenu()">📊 2-Week Ultrasound Studies</a>
+        <a href="#doctor-endorsement" onclick="window.MedicubeTheme.closeMobileMenu()">🩺 Dr. Ji-Woo Song Advisory</a>
+        <a href="#vip-club" onclick="window.MedicubeTheme.closeMobileMenu()">👑 VIP Club (15% Off Code)</a>
+      </nav>
+      <div class="mobile-nav-footer">
+        <button type="button" class="btn-primary" style="width: 100%; justify-content: center;" onclick="window.MedicubeAdmin.openPanel(); window.MedicubeTheme.closeMobileMenu();">
+          <span>⚙️ Open Store Admin Panel</span>
+        </button>
+        <div style="text-align: center; margin-top: 14px; font-size: 0.75rem; color: var(--color-text-muted);">
+          Medicube Clinical Derma Lab • Pakistan
         </div>
       </div>
     </div>
