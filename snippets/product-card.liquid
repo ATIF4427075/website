@@ -1,0 +1,53 @@
+{%- comment -%}
+  Product Card Snippet (PKR Rs.)
+{%- endcomment -%}
+
+<div class="product-card" data-category="{{ category | default: 'ampoules' }}" id="product-{{ product.id | default: 'sample' }}">
+  <div class="product-image-box">
+    {%- if badge_text != blank -%}
+      <span class="product-badge">{{ badge_text }}</span>
+    {%- elsif product.compare_at_price > product.price -%}
+      <span class="product-badge">SALE</span>
+    {%- endif -%}
+
+    <button type="button" class="product-wishlist-btn" onclick="window.MedicubeTheme.toggleWishlist(this, '{{ product.id | default: product.title }}')" title="Save to Wishlist" aria-label="Add to wishlist">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+    </button>
+
+    <a href="{{ product.url | default: '#hero-serum' }}">
+      {%- if product.featured_image -%}
+        <img src="{{ product.featured_image | img_url: '600x600' }}" alt="{{ product.title | escape }}" loading="lazy">
+      {%- else -%}
+        <img src="{{ image_url | default: 'hero_product.jpg' | asset_url }}" alt="{{ product.title | default: 'Medicube Product' | escape }}" loading="lazy">
+      {%- endif -%}
+    </a>
+  </div>
+
+  <div class="product-content">
+    <div class="product-rating-row">
+      <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+      <span>({{ product.reviews_count | default: '4.9 • 14.2k' }})</span>
+    </div>
+
+    <h3 class="product-card-title">
+      <a href="{{ product.url | default: '#hero-serum' }}">{{ product.title | default: 'EGF NAD+ Firming Serum' }}</a>
+    </h3>
+
+    <p class="product-card-desc">
+      {{ product.description | default: 'High-potency cellular actives: Pure NAD+ and bio-identical EGF.' | strip_html | truncate: 85 }}
+    </p>
+
+    <div class="product-card-footer">
+      <div class="product-price-box">
+        <span class="price-current">Rs. {{ product.price | default: '15,900' }}</span>
+        {%- if product.compare_at_price -%}
+          <span class="price-compare">Rs. {{ product.compare_at_price }}</span>
+        {%- endif -%}
+      </div>
+
+      <button type="button" class="quick-add-btn" onclick="window.MedicubeTheme.addToCart({ id: '{{ product.id | default: 'serum-001' }}', title: '{{ product.title | default: 'EGF NAD+ Firming Serum' }}', price: {{ product.price | default: 15900 }}, image: '{{ image_url | default: 'hero_product.jpg' | asset_url }}' })" title="Quick Add to Cart" aria-label="Add to cart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+      </button>
+    </div>
+  </div>
+</div>

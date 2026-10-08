@@ -1,0 +1,59 @@
+{%- comment -%}
+  VIP Club & Lead Magnet Newsletter Section
+{%- endcomment -%}
+
+<section class="vip-section" id="vip-club">
+  <div class="container">
+    <div class="vip-card">
+      <!-- Left VIP Info -->
+      <div class="vip-info">
+        <div class="eyebrow">Priority Tier Access</div>
+        <h2>Join Club Medicube VIP</h2>
+        <p>
+          Experience high-potency cellular formulations first. Unlock private clinical consultations, priority restock reservations, and complimentary travel regimens.
+        </p>
+
+        <ul class="vip-perks">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Instant 15% Welcome Discount on First Clinical Order</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Free Express Cold-Chain Temperature Controlled Shipping</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>1-on-1 Virtual Consultations with Certified Derma Specialists</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right VIP Form Box -->
+      <div class="vip-form-box">
+        <h3>Instant VIP Enrollment</h3>
+        <p>Enter your details to generate your personal 15% discount pass:</p>
+
+        <form class="vip-form" onsubmit="window.MedicubeTheme.handleVIPSubscribe(event)">
+          <input type="text" class="vip-input" placeholder="Full Legal Name" required>
+          <input type="email" class="vip-input" placeholder="Email Address" required>
+          <button type="submit" class="vip-submit-btn">
+            Activate Membership
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "VIP Club",
+  "settings": [],
+  "presets": [
+    {
+      "name": "VIP Club"
+    }
+  ]
+}
+{% endschema %}

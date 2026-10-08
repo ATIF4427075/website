@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {}
+    },
+    "ingredient_breakdown": {
+      "type": "ingredient-breakdown",
+      "settings": {}
+    },
+    "clinical_results": {
+      "type": "clinical-results",
+      "settings": {}
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {}
+    },
+    "doctor_endorsement": {
+      "type": "doctor-endorsement",
+      "settings": {}
+    },
+    "vip_club": {
+      "type": "vip-club",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "ingredient_breakdown",
+    "clinical_results",
+    "featured_collection",
+    "doctor_endorsement",
+    "vip_club"
+  ]
+}

@@ -1,0 +1,77 @@
+{%- comment -%}
+  SEO Meta Tags & Structured Data (Schema.org)
+  Optimized for Google Rich Snippets, Clinical Beauty, and OpenGraph
+{%- endcomment -%}
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="{{ settings.color_primary | default: '#740b17' }}">
+<link rel="canonical" href="{{ canonical_url }}">
+
+{%- if page_title -%}
+  <title>{{ page_title }} | Medicube Clinical Derma</title>
+{%- else -%}
+  <title>Medicube | EGF NAD+ Firming Serum - Clinical Bio-Regeneration</title>
+{%- endif -%}
+
+{%- if page_description -%}
+  <meta name="description" content="{{ page_description | escape }}">
+{%- else -%}
+  <meta name="description" content="Discover Medicube EGF NAD+ Firming Serum. High-potency bioengineered NAD+ and bio-identical EGF to reverse pore fatigue, boost dermal elasticity by 98.4%, and restore skin barrier.">
+{%- endif -%}
+
+<!-- Open Graph / Facebook -->
+<meta property="og:site_name" content="Medicube Clinical Derma">
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="og:title" content="{{ page_title | default: 'Medicube | EGF NAD+ Firming Serum' | escape }}">
+<meta property="og:type" content="product">
+<meta property="og:description" content="{{ page_description | default: 'Bioengineered clinical cellular regeneration with NAD+ and bio-identical peptide EGF.' | escape }}">
+<meta property="og:image" content="{{ 'hero_product.jpg' | asset_url }}">
+<meta property="og:image:secure_url" content="{{ 'hero_product.jpg' | asset_url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page_title | default: 'Medicube | EGF NAD+ Firming Serum' | escape }}">
+<meta name="twitter:description" content="{{ page_description | default: 'Clinical bioengineered anti-aging serum with NAD+ and EGF.' | escape }}">
+<meta name="twitter:image" content="{{ 'hero_product.jpg' | asset_url }}">
+
+<!-- JSON-LD Structured Data for Google Rich Snippets -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Medicube EGF NAD+ Firming Serum",
+  "image": [
+    "{{ 'hero_product.jpg' | asset_url }}",
+    "{{ 'ingredient_breakdown.jpg' | asset_url }}"
+  ],
+  "description": "High-potency clinical cellular regeneration serum formulated with pure NAD+, bio-identical EGF, and Collagen + 5 Peptides to reverse dermal fatigue and restore firmness.",
+  "sku": "MED-EGF-NAD-30ML",
+  "mpn": "88096432101",
+  "brand": {
+    "@type": "Brand",
+    "name": "Medicube"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "14230"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ canonical_url }}",
+    "priceCurrency": "USD",
+    "price": "58.00",
+    "priceValidUntil": "2027-12-31",
+    "itemCondition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "Medicube Clinical Lab"
+    }
+  }
+}
+</script>

@@ -1,0 +1,85 @@
+{%- comment -%}
+  Ingredient Breakdown & Bio-Mechanism Section
+{%- endcomment -%}
+
+<section class="breakdown-section" id="ingredient-breakdown">
+  <div class="container">
+    <div class="breakdown-grid">
+      <!-- Left Bottle Poster Visual -->
+      <div class="breakdown-poster-card">
+        <img src="{{ 'ingredient_breakdown.jpg' | asset_url }}" alt="Medicube EGF NAD+ Anti-Aging Breakdown Poster" loading="lazy">
+      </div>
+
+      <!-- Right Detailed Information -->
+      <div class="breakdown-content">
+        <div class="section-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>Bio-Cellular Repair Mechanism</span>
+        </div>
+
+        <h2 class="section-title">Is This The Anti-Aging Serum You Need?</h2>
+
+        <p class="section-desc">
+          Target and restore the 3 primary drivers of premature dermis aging: cellular mitochondrial fatigue, compromised epidermal barrier, and collagen network fragmentation.
+        </p>
+
+        <!-- Interactive Ingredient Cards -->
+        <div class="ingredient-cards-list">
+          <div class="ingredient-card">
+            <div class="ingredient-icon-box">NAD+</div>
+            <div class="ingredient-details">
+              <h4>Pure NAD+ (Nicotinamide Adenine Dinucleotide)</h4>
+              <p>Recharges exhausted dermal cells, stimulating ATP cellular metabolism and structural elasticity renewal.</p>
+            </div>
+            <span class="ingredient-badge">Cellular Energy</span>
+          </div>
+
+          <div class="ingredient-card">
+            <div class="ingredient-icon-box">EGF</div>
+            <div class="ingredient-details">
+              <h4>Bio-Identical EGF (Epidermal Growth Factor)</h4>
+              <p>Triggers natural fibroblast proliferation to visibly lift sagging pores and tighten skin contours.</p>
+            </div>
+            <span class="ingredient-badge">Epidermal Lift</span>
+          </div>
+
+          <div class="ingredient-card">
+            <div class="ingredient-icon-box">5-PEP</div>
+            <div class="ingredient-details">
+              <h4>Hydrolyzed Collagen + 5 Signal Peptides</h4>
+              <p>Deep multi-molecular weight hydration that plumps expression lines and locks in barrier lipids.</p>
+            </div>
+            <span class="ingredient-badge">Deep Density</span>
+          </div>
+        </div>
+
+        <!-- Worth The Hype Banner -->
+        <div class="worth-hype-banner">
+          <div class="banner-text">
+            <h5>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+              Worth the Hype?
+            </h5>
+            <p>Over 1,200 dermatologists prescribe it. Try it risk-free with our 30-day guarantee.</p>
+          </div>
+
+          <button type="button" class="btn-primary" style="padding: 12px 20px; font-size: 0.82rem;" onclick="window.MedicubeTheme.addToCart({ id: 'serum-001', title: 'EGF NAD+ Firming Serum', price: 58.00, image: 'assets/hero_product.jpg' })">
+            Claim VIP Dose
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ingredient Breakdown",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Ingredient Breakdown"
+    }
+  ]
+}
+{% endschema %}

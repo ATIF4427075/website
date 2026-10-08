@@ -1,0 +1,45 @@
+{%- comment -%}
+  Announcement Bar Section
+{%- endcomment -%}
+
+{%- if section.settings.show_announcement -%}
+  <div class="announcement-bar" id="announcementBar">
+    <div class="container">
+      <span>{{ section.settings.announcement_text_prefix }}</span>
+      <span class="highlight">{{ section.settings.announcement_highlight }}</span>
+      <span>{{ section.settings.announcement_text_suffix }}</span>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_announcement",
+      "label": "Show Announcement Bar",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "announcement_text_prefix",
+      "label": "Text Prefix",
+      "default": "⚡ FLASH: 20% OFF FIRST CLINICAL REGIMEN WITH CODE"
+    },
+    {
+      "type": "text",
+      "id": "announcement_highlight",
+      "label": "Highlight Text",
+      "default": "DERMA20"
+    },
+    {
+      "type": "text",
+      "id": "announcement_text_suffix",
+      "label": "Text Suffix",
+      "default": "• FREE EXPEDITED CLINICAL COLD-CHAIN SHIPPING OVER $75"
+    }
+  ]
+}
+{% endschema %}

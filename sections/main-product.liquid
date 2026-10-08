@@ -1,0 +1,99 @@
+{%- comment -%}
+  Main Product Section (PKR Rs.)
+{%- endcomment -%}
+
+<section class="main-product-section" id="product-top-buy">
+  <div class="container">
+    <div class="main-product-block">
+      <!-- Product Media Gallery -->
+      <div class="main-product-gallery">
+        <div class="main-product-poster">
+          <img src="{{ 'hero_product.jpg' | asset_url }}" id="mainProductImg" alt="Medicube EGF NAD+ Firming Serum">
+        </div>
+        <div class="main-product-thumbs">
+          <img src="{{ 'hero_product.jpg' | asset_url }}" alt="Thumb 1" class="main-product-thumb active" onclick="document.getElementById('mainProductImg').src=this.src; document.querySelectorAll('.main-product-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+          <img src="{{ 'ingredient_breakdown.jpg' | asset_url }}" alt="Thumb 2" class="main-product-thumb" onclick="document.getElementById('mainProductImg').src=this.src; document.querySelectorAll('.main-product-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+          <img src="{{ 'hero_model.jpg' | asset_url }}" alt="Thumb 3" class="main-product-thumb" onclick="document.getElementById('mainProductImg').src=this.src; document.querySelectorAll('.main-product-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+          <img src="{{ 'product_collagen.jpg' | asset_url }}" alt="Thumb 4" class="main-product-thumb" onclick="document.getElementById('mainProductImg').src=this.src; document.querySelectorAll('.main-product-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+        </div>
+      </div>
+
+      <!-- Product Form & Details -->
+      <div>
+        <div class="hero-badge-pill" style="margin-bottom: 12px;">
+          <span>Clinical High Concentration</span>
+        </div>
+
+        <h1 style="font-family: var(--font-serif); font-size: 2.8rem; font-weight: 700; color: #ffffff; line-height: 1.1; margin-bottom: 12px;">
+          EGF NAD+ Firming Serum
+        </h1>
+
+        <div class="product-rating-row" style="margin-bottom: 16px; font-size: 0.9rem;">
+          <span>★★★★★</span>
+          <span style="font-size: 0.82rem; color: #ffffff; font-weight: 700;">4.9 / 5.0</span>
+          <span style="color: var(--color-text-muted);">(14,230 Verified Ultrasound Studies & Reviews)</span>
+        </div>
+
+        <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 24px;">
+          <span style="font-size: 2.2rem; font-weight: 800; color: #ff526c;">Rs. 15,900</span>
+          <span style="font-size: 1.2rem; text-decoration: line-through; color: var(--color-text-light);">Rs. 19,900</span>
+          <span class="product-badge" style="position: static;">SAVE 20%</span>
+        </div>
+
+        <p style="font-size: 0.95rem; color: var(--color-text-body); line-height: 1.6; margin-bottom: 24px;">
+          Bioengineered high-potency cellular actives: NAD+ and clinical-grade peptide EGF. Reverses structural pore fatigue, enhances dermal bounce (+98.4%), and tightens facial contours with 24/7 moisture barrier reinforcement.
+        </p>
+
+        <!-- Subscription / One-time Toggle -->
+        <div style="background: rgba(20, 2, 5, 0.65); border: 1px solid var(--color-border-bright); border-radius: var(--radius-md); padding: 18px; margin-bottom: 24px;">
+          <label style="display: flex; align-items: center; justify-content: space-between; cursor: pointer; margin-bottom: 12px;">
+            <span style="font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; color: #ffffff;">
+              <input type="radio" name="purchase_type" checked style="accent-color: #ff2a4b;"> One-Time Clinical Purchase
+            </span>
+            <span style="font-weight: 800; color: #ff526c;">Rs. 15,900</span>
+          </label>
+          <label style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
+            <span style="font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; color: #ffffff;">
+              <input type="radio" name="purchase_type" style="accent-color: #ff2a4b;"> Subscribe & Auto-Deliver (Save Extra 15%)
+            </span>
+            <span style="font-weight: 800; color: #ff526c;">Rs. 13,515</span>
+          </label>
+        </div>
+
+        <!-- Add to Cart CTA -->
+        <div style="display: flex; gap: 16px; margin-bottom: 32px;">
+          <button type="button" class="btn-primary" style="flex-grow: 1; justify-content: center;" onclick="window.MedicubeTheme.addToCart({ id: 'serum-001', title: 'EGF NAD+ Firming Serum', price: 15900, image: 'assets/hero_product.jpg' })">
+            <span>Add to Clinical Regimen</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <button type="button" class="action-btn" style="width: 52px; height: 52px; border: 1px solid var(--color-border-bright);" onclick="window.MedicubeTheme.toggleWishlist(this, 'serum-001')" title="Add to Wishlist">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </button>
+        </div>
+
+        <!-- Clinical Accordions -->
+        <div style="border-top: 1px solid var(--color-border); padding-top: 16px;">
+          <details style="margin-bottom: 12px; cursor: pointer;" open>
+            <summary style="font-weight: 700; font-size: 0.95rem; color: #ffffff; padding: 8px 0;">🔬 Active Ingredients & Mechanism</summary>
+            <p style="font-size: 0.85rem; color: var(--color-text-body); padding: 8px 0;">Pure NAD+ (Nicotinamide Adenine Dinucleotide), Recombinant Bio-Identical EGF (Epidermal Growth Factor), Hydrolyzed Collagen, Copper Tripeptide-1, Acetyl Hexapeptide-8, Centella Asiatica Exosomes.</p>
+          </details>
+          <details style="margin-bottom: 12px; cursor: pointer;">
+            <summary style="font-weight: 700; font-size: 0.95rem; color: #ffffff; padding: 8px 0;">📋 How to Use Protocol</summary>
+            <p style="font-size: 0.85rem; color: var(--color-text-body); padding: 8px 0;">Apply 3-4 micro-drops morning and night after cleansing. Gently press into forehead, cheeks, and neck until fully absorbed. Follow with EGF NAD+ Cellular Firming Cream for locked moisture.</p>
+          </details>
+          <details style="margin-bottom: 12px; cursor: pointer;">
+            <summary style="font-weight: 700; font-size: 0.95rem; color: #ffffff; padding: 8px 0;">🛡️ 30-Day Clinical Money-Back Guarantee</summary>
+            <p style="font-size: 0.85rem; color: var(--color-text-body); padding: 8px 0;">If you do not experience visible dermal firming within 30 days of consistent usage, our medical team will provide a 100% full refund with zero questions asked.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main Product",
+  "settings": []
+}
+{% endschema %}

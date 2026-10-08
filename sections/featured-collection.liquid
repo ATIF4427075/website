@@ -1,0 +1,157 @@
+{%- comment -%}
+  Featured Collection Section - Curated EGF NAD+ Red Bio-Active Best Sellers (PKR Rs.)
+{%- endcomment -%}
+
+<section class="collection-section" id="curated-products">
+  <div class="container">
+    <div class="collection-header-row">
+      <h2>Curated EGF NAD+ Best Sellers</h2>
+
+      <div class="collection-tabs">
+        <button type="button" class="tab-btn active" onclick="window.MedicubeTheme.filterCollection('all', this)">
+          All Formulations
+        </button>
+        <button type="button" class="tab-btn" onclick="window.MedicubeTheme.filterCollection('ampoules', this)">
+          Ampoules & Serums
+        </button>
+        <button type="button" class="tab-btn" onclick="window.MedicubeTheme.filterCollection('creams', this)">
+          Creams & Peels
+        </button>
+      </div>
+    </div>
+
+    <div class="product-grid">
+      <!-- Product 1: EGF NAD+ Firming Serum -->
+      <div class="product-card" data-category="ampoules" id="product-serum-001">
+        <div class="product-image-box">
+          <span class="product-badge">Best Formula</span>
+          <button type="button" class="product-wishlist-btn" onclick="window.MedicubeTheme.toggleWishlist(this, 'serum-001')" title="Add to Wishlist">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </button>
+          <a href="#hero-serum">
+            <img src="{{ 'hero_product.jpg' | asset_url }}" alt="EGF NAD+ Firming Serum" loading="lazy">
+          </a>
+        </div>
+        <div class="product-content">
+          <div class="product-rating-row">
+            <span>★★★★★</span>
+            <span>(4.9 • 14.2k)</span>
+          </div>
+          <h3 class="product-card-title"><a href="#hero-serum">EGF NAD+ Firming Serum</a></h3>
+          <p class="product-card-desc">High-potency cellular actives: Pure NAD+ with bio-identical peptide EGF for structural pore lift.</p>
+          <div class="product-card-footer">
+            <div class="product-price-box">
+              <span class="price-current">Rs. 15,900</span>
+              <span class="price-compare">Rs. 19,900</span>
+            </div>
+            <button type="button" class="quick-add-btn" onclick="window.MedicubeTheme.addToCart({ id: 'serum-001', title: 'EGF NAD+ Firming Serum', price: 15900, image: 'assets/hero_product.jpg' })" title="Quick Add">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2: EGF NAD+ Cellular Firming Cream -->
+      <div class="product-card" data-category="creams" id="product-cream-002">
+        <div class="product-image-box">
+          <span class="product-badge gold">Cellular Density</span>
+          <button type="button" class="product-wishlist-btn" onclick="window.MedicubeTheme.toggleWishlist(this, 'cream-002')" title="Add to Wishlist">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </button>
+          <a href="#curated-products">
+            <img src="{{ 'product_collagen.jpg' | asset_url }}" alt="EGF NAD+ Cellular Firming Cream" loading="lazy">
+          </a>
+        </div>
+        <div class="product-content">
+          <div class="product-rating-row">
+            <span>★★★★★</span>
+            <span>(4.9 • 8.1k)</span>
+          </div>
+          <h3 class="product-card-title"><a href="#curated-products">EGF NAD+ Cellular Firming Cream</a></h3>
+          <p class="product-card-desc">Deep crimson bio-matrix cream infused with pure NAD+ & lipid ceramides for 48hr structural bounce.</p>
+          <div class="product-card-footer">
+            <div class="product-price-box">
+              <span class="price-current">Rs. 12,900</span>
+              <span class="price-compare">Rs. 16,500</span>
+            </div>
+            <button type="button" class="quick-add-btn" onclick="window.MedicubeTheme.addToCart({ id: 'cream-002', title: 'EGF NAD+ Cellular Firming Cream', price: 12900, image: 'assets/product_collagen.jpg' })" title="Quick Add">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3: EGF NAD+ Resurfacing Peeling Pads -->
+      <div class="product-card" data-category="creams" id="product-pad-003">
+        <div class="product-image-box">
+          <span class="product-badge">Bio-Peeling</span>
+          <button type="button" class="product-wishlist-btn" onclick="window.MedicubeTheme.toggleWishlist(this, 'pad-003')" title="Add to Wishlist">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </button>
+          <a href="#curated-products">
+            <img src="{{ 'product_pore_pad.jpg' | asset_url }}" alt="EGF NAD+ Resurfacing Peeling Pad" loading="lazy">
+          </a>
+        </div>
+        <div class="product-content">
+          <div class="product-rating-row">
+            <span>★★★★★</span>
+            <span>(4.8 • 19.4k)</span>
+          </div>
+          <h3 class="product-card-title"><a href="#curated-products">EGF NAD+ Resurfacing Peeling Pad</a></h3>
+          <p class="product-card-desc">70 Embossed dual-action pads soaked in active red serum to smooth textured pores and activate cellular turnover.</p>
+          <div class="product-card-footer">
+            <div class="product-price-box">
+              <span class="price-current">Rs. 8,900</span>
+              <span class="price-compare">Rs. 11,500</span>
+            </div>
+            <button type="button" class="quick-add-btn" onclick="window.MedicubeTheme.addToCart({ id: 'pad-003', title: 'EGF NAD+ Resurfacing Peeling Pad', price: 8900, image: 'assets/product_pore_pad.jpg' })" title="Quick Add">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4: EGF NAD+ Eye & Neck Lift Concentrate -->
+      <div class="product-card" data-category="ampoules" id="product-eye-004">
+        <div class="product-image-box">
+          <span class="product-badge">Contour Lift</span>
+          <button type="button" class="product-wishlist-btn" onclick="window.MedicubeTheme.toggleWishlist(this, 'eye-004')" title="Add to Wishlist">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </button>
+          <a href="#curated-products">
+            <img src="{{ 'product_vita_c.jpg' | asset_url }}" alt="EGF NAD+ Eye & Neck Lift Concentrate" loading="lazy">
+          </a>
+        </div>
+        <div class="product-content">
+          <div class="product-rating-row">
+            <span>★★★★★</span>
+            <span>(4.9 • 6.7k)</span>
+          </div>
+          <h3 class="product-card-title"><a href="#curated-products">EGF NAD+ Eye & Neck Lift Concentrate</a></h3>
+          <p class="product-card-desc">Targeted precision peptide dropper targeting deep smile lines, crow's feet, and sagging neck contours.</p>
+          <div class="product-card-footer">
+            <div class="product-price-box">
+              <span class="price-current">Rs. 12,500</span>
+              <span class="price-compare">Rs. 15,900</span>
+            </div>
+            <button type="button" class="quick-add-btn" onclick="window.MedicubeTheme.addToCart({ id: 'eye-004', title: 'EGF NAD+ Eye & Neck Lift Concentrate', price: 12500, image: 'assets/product_vita_c.jpg' })" title="Quick Add">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Collection",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Featured Collection"
+    }
+  ]
+}
+{% endschema %}

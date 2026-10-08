@@ -1,0 +1,196 @@
+{%- comment -%}
+  Admin Control Panel Snippet (Upper Dropdown Setting Center)
+{%- endcomment -%}
+
+<!-- Admin Control Panel Drawer & Overlay -->
+<div class="admin-overlay" id="adminOverlay" onclick="window.MedicubeAdmin.closePanel()"></div>
+
+<div class="admin-drawer" id="adminDrawer" aria-modal="true" role="dialog" aria-label="Admin Control Panel">
+  <!-- Admin Header -->
+  <div class="admin-header">
+    <div class="admin-header-title">
+      <h3>⚙️ Store Admin Control</h3>
+      <span class="admin-badge-live">LIVE WYSIWYG</span>
+    </div>
+    <button type="button" class="cart-drawer-close" onclick="window.MedicubeAdmin.closePanel()" aria-label="Close Admin Panel">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+
+  <!-- Admin Tabs Navigation -->
+  <div class="admin-tabs-nav">
+    <button type="button" class="admin-tab-btn active" onclick="window.MedicubeAdmin.switchTab('tab-captions', this)">
+      <span style="font-size: 1.1rem;">📝</span>
+      <span>Captions</span>
+    </button>
+    <button type="button" class="admin-tab-btn" onclick="window.MedicubeAdmin.switchTab('tab-products', this)">
+      <span style="font-size: 1.1rem;">🛍️</span>
+      <span>Products</span>
+    </button>
+    <button type="button" class="admin-tab-btn" onclick="window.MedicubeAdmin.switchTab('tab-sections', this)">
+      <span style="font-size: 1.1rem;">🧱</span>
+      <span>Sections</span>
+    </button>
+    <button type="button" class="admin-tab-btn" onclick="window.MedicubeAdmin.switchTab('tab-settings', this)">
+      <span style="font-size: 1.1rem;">⚙️</span>
+      <span>Settings</span>
+    </button>
+  </div>
+
+  <!-- Admin Body -->
+  <div class="admin-body">
+    <!-- TAB 1: CAPTIONS & HEADINGS -->
+    <div class="admin-tab-content active" id="tab-captions">
+      <form onsubmit="window.MedicubeAdmin.saveCaptions(event)">
+        <div class="admin-card-box">
+          <h4>📢 Announcement Bar</h4>
+          <div class="admin-form-group">
+            <label>Announcement Bar Text & Offer</label>
+            <textarea class="admin-textarea" id="inputAnnouncement" rows="2"></textarea>
+          </div>
+        </div>
+
+        <div class="admin-card-box">
+          <h4>✨ Hero Showcase Banner</h4>
+          <div class="admin-form-group">
+            <label>Hero Title Line (e.g. FIRM. SMOOTH.)</label>
+            <input type="text" class="admin-input" id="inputHeroTitle1">
+          </div>
+          <div class="admin-form-group">
+            <label>Hero Accent Word (e.g. RENEW.)</label>
+            <input type="text" class="admin-input" id="inputHeroAccent">
+          </div>
+          <div class="admin-form-group">
+            <label>Hero Subhead Pill</label>
+            <input type="text" class="admin-input" id="inputHeroSubhead">
+          </div>
+          <div class="admin-form-group">
+            <label>Hero Description</label>
+            <textarea class="admin-textarea" id="inputHeroDesc" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="admin-card-box">
+          <h4>🧪 Main Product Buy-Box Details</h4>
+          <div class="admin-form-group">
+            <label>Product Title</label>
+            <input type="text" class="admin-input" id="inputMainTitle">
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="admin-form-group">
+              <label>Price in PKR (Rs.)</label>
+              <input type="number" class="admin-input" id="inputMainPrice">
+            </div>
+            <div class="admin-form-group">
+              <label>Compare Price (Rs.)</label>
+              <input type="number" class="admin-input" id="inputMainCompare">
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; border-radius: 8px;">
+          <span>💾 Save & Apply Captions Live</span>
+        </button>
+      </form>
+    </div>
+
+    <!-- TAB 2: PRODUCTS MANAGER (ADD & DELETE) -->
+    <div class="admin-tab-content" id="tab-products">
+      <div class="admin-card-box">
+        <h4>➕ Add New Clinical Product</h4>
+        <form onsubmit="window.MedicubeAdmin.addProduct(event)">
+          <div class="admin-form-group">
+            <label>Product Title</label>
+            <input type="text" name="product_title" class="admin-input" placeholder="e.g. EGF NAD+ Bio-Barrier Serum" required>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="admin-form-group">
+              <label>Price (PKR Rs.)</label>
+              <input type="number" name="product_price" class="admin-input" placeholder="14500" required>
+            </div>
+            <div class="admin-form-group">
+              <label>Compare Price (Rs.)</label>
+              <input type="number" name="product_compare" class="admin-input" placeholder="18000">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="admin-form-group">
+              <label>Category</label>
+              <select name="product_category" class="admin-select">
+                <option value="ampoules">Ampoules & Serums</option>
+                <option value="creams">Creams & Peels</option>
+              </select>
+            </div>
+            <div class="admin-form-group">
+              <label>Product Badge</label>
+              <input type="text" name="product_badge" class="admin-input" placeholder="e.g. New Launch">
+            </div>
+          </div>
+
+          <div class="admin-form-group">
+            <label>Product Image</label>
+            <select name="product_image" class="admin-select">
+              <option value="{{ 'hero_product.jpg' | asset_url }}">EGF NAD+ Red Glass Serum Bottle</option>
+              <option value="{{ 'product_collagen.jpg' | asset_url }}">EGF NAD+ Red Glass Cream Jar</option>
+              <option value="{{ 'product_pore_pad.jpg' | asset_url }}">EGF NAD+ Red Peeling Pad Tub</option>
+              <option value="{{ 'product_vita_c.jpg' | asset_url }}">EGF NAD+ Red Eye Concentrate Dropper</option>
+            </select>
+          </div>
+
+          <div class="admin-form-group">
+            <label>Short Formulation Summary</label>
+            <textarea name="product_desc" class="admin-textarea" placeholder="High-potency clinical formulation with active EGF NAD+ bio-identical complex." rows="2"></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; border-radius: 8px;">
+            <span>➕ Add Product to Store Grid</span>
+          </button>
+        </form>
+      </div>
+
+      <div class="admin-card-box">
+        <h4>📦 Active Products in Catalog</h4>
+        <div class="admin-product-preview-list" id="adminProductList">
+          <!-- Populated dynamically by theme.js -->
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: SECTIONS & BLOCKS REORDERING & VISIBILITY -->
+    <div class="admin-tab-content" id="tab-sections">
+      <div class="admin-card-box">
+        <h4>🧱 Sections Layout & Reordering</h4>
+        <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 16px;">
+          Use the arrows (↑ / ↓) to reorder page sections in real-time. Check/uncheck boxes to show or hide sections.
+        </p>
+        <div id="adminSectionsList">
+          <!-- Populated dynamically by theme.js -->
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: SETTINGS & RESET -->
+    <div class="admin-tab-content" id="tab-settings">
+      <div class="admin-card-box">
+        <h4>🔄 Factory Reset</h4>
+        <p style="font-size: 0.82rem; color: var(--color-text-body); margin-bottom: 16px; line-height: 1.5;">
+          Reset all customized titles, section order, and product catalog back to the original theme defaults.
+        </p>
+        <button type="button" class="btn-secondary" style="width: 100%; border-radius: 8px; color: #ff526c; border-color: rgba(255, 82, 108, 0.4);" onclick="window.MedicubeAdmin.resetDefaults()">
+          <span>Reset Everything to Default</span>
+        </button>
+      </div>
+
+      <div class="admin-card-box">
+        <h4>💡 How It Works</h4>
+        <ul style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.6; padding-left: 18px;">
+          <li>All changes are applied immediately to the live store DOM.</li>
+          <li>Settings are saved to browser local storage so your updates persist upon refresh.</li>
+          <li>Adding a product dynamically enables Ajax Cart purchasing and wishlist support.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

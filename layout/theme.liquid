@@ -1,0 +1,30 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code | default: 'en' }}">
+<head>
+  {%- render 'meta-tags' -%}
+
+  <!-- Fonts & Icons Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  {{ 'theme.css' | asset_url | stylesheet_tag }}
+
+  {{ content_for_header }}
+</head>
+<body class="template-{{ template.name | handle }}">
+  {%- section 'announcement-bar' -%}
+  {%- section 'header' -%}
+
+  <main id="MainContent" role="main" tabindex="-1">
+    {{ content_for_layout }}
+  </main>
+
+  {%- section 'trust-badges' -%}
+  {%- section 'footer' -%}
+
+  {%- render 'cart-drawer' -%}
+  {%- render 'admin-control-panel' -%}
+
+  {{ 'theme.js' | asset_url | script_tag }}
+</body>
+</html>

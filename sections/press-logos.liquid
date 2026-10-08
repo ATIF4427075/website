@@ -1,0 +1,38 @@
+{%- comment -%}
+  Press Logos Section
+{%- endcomment -%}
+
+<section class="press-bar">
+  <div class="container">
+    <div class="press-title">
+      {{ section.settings.press_title | default: 'Featured in Clinical Publications & Global Press' }}
+    </div>
+
+    <div class="press-logos-row">
+      <span class="press-logo-text">VOGUE</span>
+      <span class="press-logo-text">ALLURE</span>
+      <span class="press-logo-text">Harper's BAZAAR</span>
+      <span class="press-logo-text">ELLE KOREA</span>
+      <span class="press-logo-text">MARIE CLAIRE</span>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Press Logos",
+  "settings": [
+    {
+      "type": "text",
+      "id": "press_title",
+      "label": "Section Heading",
+      "default": "Featured in Clinical Publications & Global Press"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Press Logos"
+    }
+  ]
+}
+{% endschema %}

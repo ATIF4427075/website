@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {}
+    },
+    "trust_badges": {
+      "type": "trust-badges",
+      "settings": {}
+    }
+  },
+  "order": [
+    "featured_collection",
+    "trust_badges"
+  ]
+}

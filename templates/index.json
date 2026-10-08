@@ -1,0 +1,52 @@
+{
+  "sections": {
+    "hero_banner": {
+      "type": "hero-banner",
+      "settings": {
+        "badge_text": "Bio-Innovation Clinical Breakthrough",
+        "subhead_pill": "REVERSE STRUCTURAL PORE FATIGUE",
+        "description": "Bioengineered high-potency cellular actives: NAD+ and clinical-grade peptide EGF. Engineered to reverse structural pore fatigue, activate deep fibroblasts, and impart incandescent glass-skin fullness."
+      }
+    },
+    "main_product": {
+      "type": "main-product",
+      "settings": {}
+    },
+    "press_logos": {
+      "type": "press-logos",
+      "settings": {
+        "press_title": "Featured in Clinical Publications & Global Press"
+      }
+    },
+    "ingredient_breakdown": {
+      "type": "ingredient-breakdown",
+      "settings": {}
+    },
+    "clinical_results": {
+      "type": "clinical-results",
+      "settings": {}
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {}
+    },
+    "doctor_endorsement": {
+      "type": "doctor-endorsement",
+      "settings": {}
+    },
+    "vip_club": {
+      "type": "vip-club",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero_banner",
+    "main_product",
+    "press_logos",
+    "ingredient_breakdown",
+    "clinical_results",
+    "featured_collection",
+    "doctor_endorsement",
+    "vip_club"
+  ]
+}

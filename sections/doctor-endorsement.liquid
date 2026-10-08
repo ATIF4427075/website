@@ -1,0 +1,58 @@
+{%- comment -%}
+  Doctor & Expert Clinical Endorsement Section
+{%- endcomment -%}
+
+<section class="doctor-section" id="doctor-endorsement">
+  <div class="container">
+    <div class="doctor-grid">
+      <!-- Doctor Photo Card -->
+      <div class="doctor-photo-card">
+        <img src="{{ 'doctor_portrait.jpg' | asset_url }}" alt="Dr. Ji-Woo Song, M.D., Ph.D." loading="lazy">
+        <div class="doctor-photo-badge">
+          <h4>Dr. Ji-Woo Song, M.D., Ph.D.</h4>
+          <p>Chief Medical Advisor • Seoul Dermatological Research Laboratory</p>
+        </div>
+      </div>
+
+      <!-- Quote & Philosophy Content -->
+      <div class="doctor-content">
+        <div class="quote-eyebrow">
+          <span>Clinical Philosophy</span>
+        </div>
+
+        <blockquote class="doctor-quote">
+          “Dedicated to real results. Backed by science. In clinical dermatology, superficial hydration is not enough. You must activate the cellular engine of the dermis with pure NAD+ and bio-identical EGF to command genuine structural regeneration.”
+        </blockquote>
+
+        <div class="doctor-stats-row">
+          <div class="doctor-stat-item">
+            <h3>100%</h3>
+            <p>Bio-Identical Active Compatibility</p>
+          </div>
+
+          <div class="doctor-stat-item">
+            <h3>0%</h3>
+            <p>Artificial Fragrance & Harmful Parabens</p>
+          </div>
+
+          <div class="doctor-stat-item">
+            <h3>Ph 5.5</h3>
+            <p>Optimal Acid Mantle Micro-biome Match</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Doctor Endorsement",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Doctor Endorsement"
+    }
+  ]
+}
+{% endschema %}

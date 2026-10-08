@@ -1,0 +1,15 @@
+{
+  "current": {
+    "color_primary": "#ff2a4b",
+    "color_primary_dark": "#6e0816",
+    "color_accent": "#ff99aa",
+    "color_text": "#ffffff",
+    "color_background": "#140205",
+    "color_card": "#28040a",
+    "cart_type": "drawer",
+    "free_shipping_threshold": 75,
+    "social_instagram_link": "https://instagram.com/medicube_official",
+    "social_tiktok_link": "https://tiktok.com/@medicube_official",
+    "social_youtube_link": "https://youtube.com/@medicubeglobal"
+  }
+}

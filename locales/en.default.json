@@ -1,0 +1,38 @@
+{
+  "general": {
+    "accessibility": {
+      "close": "Close",
+      "cart": "Cart",
+      "search": "Search",
+      "menu": "Menu"
+    },
+    "currency": "PKR"
+  },
+  "cart": {
+    "general": {
+      "title": "Your Clinical Cart",
+      "empty": "Your cart is currently empty",
+      "continue_shopping": "Explore Formulations",
+      "subtotal": "Subtotal",
+      "checkout": "Proceed to Secure Checkout",
+      "delivery_notice": "Free Express Cold-Chain Delivery Across Pakistan"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to Cart",
+      "sold_out": "Sold Out",
+      "unavailable": "Unavailable",
+      "quick_add": "Quick Add",
+      "regular_price": "Regular Price",
+      "sale_price": "Sale Price"
+    }
+  },
+  "newsletter": {
+    "heading": "Join Club Medicube VIP",
+    "subheading": "Receive 15% off your first clinical order, private consultations & early access.",
+    "email_placeholder": "Enter your clinical email...",
+    "button_label": "ACTIVATE MEMBERSHIP",
+    "success": "Welcome to Club Medicube VIP! Your 15% promo code is DERMA15."
+  }
+}
