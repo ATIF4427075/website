@@ -9,6 +9,18 @@
   
   {{ 'theme.css' | asset_url | stylesheet_tag }}
 
+  <script>
+    window.ShopifyAssets = {
+      'assets/hero_product.jpg': "{{ 'hero_product.jpg' | asset_url }}",
+      'assets/product_collagen.jpg': "{{ 'product_collagen.jpg' | asset_url }}",
+      'assets/product_pore_pad.jpg': "{{ 'product_pore_pad.jpg' | asset_url }}",
+      'assets/product_vita_c.jpg': "{{ 'product_vita_c.jpg' | asset_url }}",
+      'assets/ingredient_breakdown.jpg': "{{ 'ingredient_breakdown.jpg' | asset_url }}",
+      'assets/hero_model.jpg': "{{ 'hero_model.jpg' | asset_url }}",
+      'assets/doctor_portrait.jpg': "{{ 'doctor_portrait.jpg' | asset_url }}"
+    };
+  </script>
+
   {{ content_for_header }}
 </head>
 <body class="template-{{ template.name | handle }}">

@@ -6,6 +6,21 @@
 (function () {
   'use strict';
 
+  // Helper to resolve asset URLs (both local preview & Shopify CDN)
+  function resolveAssetUrl(url) {
+    if (!url) return '';
+    if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('data:') || url.startsWith('blob:')) {
+      return url;
+    }
+    if (window.ShopifyAssets) {
+      if (window.ShopifyAssets[url]) return window.ShopifyAssets[url];
+      const cleanKey = url.replace(/^\/?assets\//, '');
+      if (window.ShopifyAssets[cleanKey]) return window.ShopifyAssets[cleanKey];
+      if (window.ShopifyAssets['assets/' + cleanKey]) return window.ShopifyAssets['assets/' + cleanKey];
+    }
+    return url;
+  }
+
   // Default Products Catalog
   const DEFAULT_PRODUCTS = [
     {
@@ -170,14 +185,16 @@
 
     let subtotal = 0;
     let totalItems = 0;
+    const fallbackUrl = resolveAssetUrl('hero_product.jpg') || 'assets/hero_product.jpg';
 
     cartItemsContainer.innerHTML = state.cart.map((item, index) => {
       subtotal += item.price * item.quantity;
       totalItems += item.quantity;
+      const itemImg = resolveAssetUrl(item.image);
 
       return `
         <div class="cart-item" data-id="${item.id}">
-          <img src="${item.image}" alt="${item.title}" onerror="this.src='assets/hero_product.jpg'">
+          <img src="${itemImg}" alt="${item.title}" onerror="if(this.src!=='${fallbackUrl}'){this.src='${fallbackUrl}';}">
           <div class="cart-item-details">
             <h4>${item.title}</h4>
             <div style="font-size: 0.72rem; color: var(--color-text-muted);">${item.volume || 'Clinical High Concentration'}</div>
@@ -204,8 +221,21 @@
     const grid = document.querySelector('.product-grid');
     if (!grid) return;
 
+    // Check if custom products exist in localStorage
+    const savedProducts = localStorage.getItem('medicube_theme_products');
+    
+    // If no custom products are saved in localStorage AND the grid already has server-rendered elements from Liquid, keep them!
+    if (!savedProducts && grid.children.length > 0) {
+      renderAdminProductList();
+      return;
+    }
+
+    const fallbackUrl = resolveAssetUrl('hero_product.jpg') || 'assets/hero_product.jpg';
+
     grid.innerHTML = state.products.map(p => {
       const isWishlisted = state.wishlist.has(p.id);
+      const imgUrl = resolveAssetUrl(p.image);
+      const safeTitle = p.title.replace(/'/g, "\\'");
       return `
         <div class="product-card" data-category="${p.category || 'ampoules'}" id="product-${p.id}">
           <div class="product-image-box">
@@ -214,7 +244,7 @@
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
             </button>
             <a href="#product-top-buy">
-              <img src="${p.image}" alt="${p.title}" onerror="this.src='assets/hero_product.jpg'">
+              <img src="${imgUrl}" alt="${p.title}" loading="lazy" onerror="if(this.src!=='${fallbackUrl}'){this.src='${fallbackUrl}';}">
             </a>
           </div>
           <div class="product-content">
@@ -229,7 +259,7 @@
                 <span class="price-current">Rs. ${p.price.toLocaleString('en-PK')}</span>
                 ${p.comparePrice ? `<span class="price-compare">Rs. ${p.comparePrice.toLocaleString('en-PK')}</span>` : ''}
               </div>
-              <button type="button" class="quick-add-btn" onclick="window.MedicubeTheme.addToCart({ id: '${p.id}', title: '${p.title.replace(/'/g, "\\'")}', price: ${p.price}, image: '${p.image}' })" title="Quick Add">
+              <button type="button" class="quick-add-btn" onclick="window.MedicubeTheme.addToCart({ id: '${p.id}', title: '${safeTitle}', price: ${p.price}, image: '${p.image}' })" title="Quick Add">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
               </button>
             </div>
@@ -245,19 +275,23 @@
   function renderAdminProductList() {
     const listEl = document.getElementById('adminProductList');
     if (!listEl) return;
+    const fallbackUrl = resolveAssetUrl('hero_product.jpg') || 'assets/hero_product.jpg';
 
-    listEl.innerHTML = state.products.map((p, idx) => `
-      <div class="admin-product-preview-row" data-id="${p.id}">
-        <img src="${p.image}" alt="${p.title}">
-        <div class="admin-product-meta">
-          <h5>${p.title}</h5>
-          <span>Rs. ${p.price.toLocaleString('en-PK')} • ${p.category}</span>
+    listEl.innerHTML = state.products.map((p) => {
+      const imgUrl = resolveAssetUrl(p.image);
+      return `
+        <div class="admin-product-preview-row" data-id="${p.id}">
+          <img src="${imgUrl}" alt="${p.title}" onerror="if(this.src!=='${fallbackUrl}'){this.src='${fallbackUrl}';}">
+          <div class="admin-product-meta">
+            <h5>${p.title}</h5>
+            <span>Rs. ${p.price.toLocaleString('en-PK')} • ${p.category}</span>
+          </div>
+          <button type="button" class="admin-icon-btn" onclick="window.MedicubeAdmin.deleteProduct('${p.id}')" title="Delete Product" style="color: #ff453a;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+          </button>
         </div>
-        <button type="button" class="admin-icon-btn" onclick="window.MedicubeAdmin.deleteProduct('${p.id}')" title="Delete Product" style="color: #ff453a;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
-        </button>
-      </div>
-    `).join('');
+      `;
+    }).join('');
   }
 
   // Render Admin Sections List inside Drawer
@@ -587,4 +621,3 @@
     applySavedCaptions();
   });
 })();
-

@@ -62,7 +62,7 @@
 
         <!-- Add to Cart CTA -->
         <div style="display: flex; gap: 16px; margin-bottom: 32px;">
-          <button type="button" class="btn-primary" style="flex-grow: 1; justify-content: center;" onclick="window.MedicubeTheme.addToCart({ id: 'serum-001', title: 'EGF NAD+ Firming Serum', price: 15900, image: 'assets/hero_product.jpg' })">
+          <button type="button" class="btn-primary" style="flex-grow: 1; justify-content: center;" onclick="window.MedicubeTheme.addToCart({ id: 'serum-001', title: 'EGF NAD+ Firming Serum', price: 15900, image: '{{ 'hero_product.jpg' | asset_url }}' })">
             <span>Add to Clinical Regimen</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
